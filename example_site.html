@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NRI - Neuroinnovation Research Ideathon</title>
+
+<style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+            line-height: 1.8;
+            color: #333;
+            background-color: #ffffff;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding-bottom: 80px;
+        }
+
+        .hero-placeholder {
+            width: 100%;
+            height: 300px;
+            background-color: #f0f0f0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-bottom: 2px solid #ddd;
+            font-weight: bold;
+            font-size: 1.5rem;
+            text-align: center;
+        }
+
+	.section-banner {
+  	    width: 95%;
+	    justify-content: center;
+	    align-items: center;
+  	    margin: 60px auto 30px auto;
+ 	    padding: 15px 20px;
+ 	    color: #fff;
+ 	    text-align: center;
+ 	    border-radius: 8px;
+ 	    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+	}
+
+
+        .banner-red { background-color: #f68989; }
+        .banner-blue { background-color: #0B5394; }
+
+        .jp-title {
+            display: block;
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 2px;
+        }
+
+        .en-title {
+            display: block;
+            font-size: 1.3rem;
+        }
+
+        .content-block {
+            width: 90%;
+            margin: 0 auto;
+            font-size: 1.15rem;
+        }
+
+        .center { text-align: center; }
+
+
+	.redfont{
+	    color: #ff5d5d;
+	    font-size: 1.3rem;
+	    font-weight: bold
+	}
+
+	.redsection{
+	    color: #ff5d5d;
+	    font-size: 1.5rem;
+	    font-weight: bold
+	}
+
+	.redbigfont{
+	    color: #ff5d5d;
+	    font-size: 1.7rem;
+	    font-weight: bold;
+	    text-align: center;
+	}
+
+
+	.bluefont{
+	    color: #0B5394;
+	    font-weight: bold
+	}
+
+        .highlight {
+            display: inline-block;
+            background-color: #f68989;
+            color: white;
+            font-weight: bold;
+	    font-size: 1.5rem;
+            padding: 2px 10px;
+            margin: 0 3px;
+            border-radius: 4px;
+        }
+
+        .btn-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            margin: 40px 0;
+	    text-align: center;
+        }
+
+        .round-button {
+    	    display: flex;
+    	    align-items: center;
+    	    justify-content: center;
+	    position: relative;
+   	    width: 320px;
+    	    padding: 18px 30px;
+    	    background-color: #f68989;
+    	    color: white;
+    	    text-decoration: none;
+    	    border-radius: 60px;
+    	    font-weight: bold;
+    	    font-size: 1.1rem;
+   	    transition: 0.3s;
+   	    box-shadow: 0 5px 15px rgba(43, 76, 126, 0.3);
+	}
+
+	.icon {
+  	   position: absolute;
+    	   right: 65px;
+   	   top: 50%;
+   	   transform: translateY(-50%);
+    	   font-size: 1.2rem;
+	}
+
+	.round-button:hover {
+    	   background-color: #ff7070;
+   	   box-shadow: 0 8px 20px rgba(43, 76, 126, 0.4);
+	   font-size: 1.3rem
+	}
+
+        /* Judges Grid */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+            margin-top: 40px;
+        }
+
+        .card { text-align: center; }
+
+        .circle-img {
+            width: 160px;
+            height: 160px;
+            background-color: #eee;
+            border-radius: 50%;
+            margin: 0 auto 15px;
+            border: 5px solid #f8f8f8;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+            color: #999;
+        }
+
+        .role { font-size: 0.9rem; color: #555; margin-bottom: 5px; }
+        .name { font-size: 1.25rem; font-weight: bold; }
+
+        .fade-in {
+            animation: fadeIn 0.8s ease-in;
+        }
+
+  .keynote-wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      gap: 50px;
+      margin: 50px 0;
+  }
+
+  .speaker-profile-group {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 30px;
+      flex: 1.5;
+  }
+
+  .circle-img-keynote {
+    width: 300px;	
+    height: 300px;
+    border-radius: 50%;
+    border: 6px solid #f8f8f8;
+    background-color: #eee;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .name-large {
+    font-size: 2.1rem;
+    margin: 0 0 12px 0;
+    font-weight: bold;
+    text-align: center;
+  }
+
+  .credentials-list {
+    list-style: none;
+    padding: 0 0 20px;
+    margin: 0;
+    font-size: 0.88rem;
+    line-height: 1.6;
+    color: #ffffff;
+    font-weight: bold;
+  } 
+
+  .bracket-side {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .large-bracket-box {
+    position: relative;
+    padding: 30px 50px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 3rem;
+    line-height: 1.4;
+    display: inline-block;
+  }
+
+  .text-yellow { color: #fff58c; }
+  .text-white { color: #ffffff; }
+
+  .large-bracket-box::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 45px;
+    height: 45px;
+    border-top: 5px solid #e56b6f; 
+    border-left: 5px solid #e56b6f;
+  }
+
+  .large-bracket-box::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 45px;
+    height: 45px;
+    border-bottom: 5px solid #e56b6f;
+    border-right: 5px solid #e56b6f;
+  }
+
+@media (max-width: 1000px) {
+    .keynote-horizontal-wrapper {
+        text-align: center;
+    }
+    .bracket-side {
+        justify-content: center;
+    }
+}
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+	 
+</style>
+</head>
+<body>
+
+<div class="container fade-in">
+    <div class="hero-placeholder">
+        [ NRI Title Image Placeholder ]
+    </div>
+
+    <div class="section-banner banner-red">
+        <span class="jp-title">大会概要</span>
+        <span class="en-title">About NRI</span>
+    </div>
+
+    <div class="content-block">
+        <p>NRI (Neuroinnovation Research Ideathon) は、<span class="redfont">中高生が神経科学を活用した斬新なアイデアを発表するコンテスト</span>です 。</p>
+        <p>評価点は知識ではなく、<span class="highlight">創造性・実用性・現実性</span>。</p>
+        <p>神経科学の知識を土台としながら、自由な発想を武器に、<span class="bluefont">製品・サービス・教育・医療・テクノロジー・エンターテインメント</span>など多様な分野での<span class="bluefont">日常生活の課題解決</span>や<span class: "bluefont">新しいライフスタイルの提案</span>へと応用するアイデアを募集します! </p>
+        <p>NRIは、<span class="redfont">「知識を超えた発想力」</span>を引き出し、若い世代の創造力を育むことを目指しています。</p>
+	<p>また、<span class="bluefont">「考える・創る・伝える」</span>というプロセスを通じて、論理的思考力、プレゼンテーション能力、そしてチームワークを養う場でもあります。参加者同士が刺激し合い、競い合うことで、より高いレベルのアイデアが生まれることを期待しています。
+</p>
+    <div style="text-align: center;">
+  	<p style="display: inline-block; background-color: #ff5d5d; color: white; font-weight: bold; font-size: 1.7rem; padding: 2px 10px; margin: 0 3px; border-radius: 4px;">
+	未来を切り開く斬新なアイデアを、自由に考えて発信しましょう！
+        </p>
+    </div>
+	<p>皆さんのご参加を、心よりお待ちしています！</p>
+    </div>
+
+    <div class="section-banner banner-red">
+        <span class="jp-title">私たちのミッション</span>
+        <span class="en-title">Our Mission</span>
+    </div>
+
+    <div class="content-block">
+        <p class="redbigfont">「神経科学をより身近に」</p>
+        <p>私たちは、神経科学の研究が進むことで、神経変性疾患のメカニズムの解明などにより人々の命や生活の質を向上し、社会全体に大きな利益をもたらすと考えています。</p>
+	<p>そのため、中高生に神経科学への関心を喚起し、次世代の神経科学者を育成する必要があります。</p>
+	<p>また、日本では神経科学に関する正しい知識の普及が不足しており、デマの流布や差別・偏見が引き起こされています。</p>
+	<p>NRIを通じて中高生に神経科学に触れ、正しい知識を学ぶ場を提供します。</p>
+
+    </div>
+
+    <div class="section-banner banner-red">
+        <span class="jp-title">テーマ</span>
+        <span class="en-title">Theme</span>
+    </div>
+
+    <div class="content-block center">
+        <p style="font-size: 1.9rem; font-weight: bold; color: #ff5d5d">「神経科学を活用して、より豊かで快適な生活を作る」</p>
+    </div>
+
+    <div class="section-banner banner-red">
+        <span class="jp-title">応募</span>
+        <span class="en-title">Entry</span>
+    </div>
+
+    <div class="content-block center">
+        <p class="redsection">【募集期間】</p>
+	<p style="font-size: 1.5rem">2025年12月12日(金) ~ 2026年2月15日(日)</p>
+        
+        <div class="btn-container">
+            <a href="http://example.com" class="round-button">募集要項はこちら<span class="icon"> > </span></a>
+        </div>
+
+        <div style="text-align: center"><p class="redsection">【応募条件】</p></div>
+
+        <div style="text-align: left; background: #fff5f5; padding: 20px; border-radius: 8px;">
+            <ul>
+                <li>個人または2~5名のチームであること</li>
+                <li>チーム全員が中学1年生~高校3年生のいずれかであること (2025年度時点)</li>
+                <li>専門知識は不要。自由な発想で応募が可能です</li>
+            </ul>
+        </div>
+	
+	<div style="text-align: center"><p class="redsection">【登録フォーム】</p></div>
+
+	<div class="btn-container">
+            <a href="http://example.com" class="round-button">登録フォームはこちら<span class="icon"> > </span></a>
+	</div>
+
+
+    </div>
+
+    <div class="section-banner banner-red">
+        <span class="jp-title">オフライン発表</span>
+        <span class="en-title">Offline Presentation</span>
+    </div>
+
+    <div class="content-block center">
+        <p class="redsection">【会場・日時】</p>
+	<p style="font-size: 1.5rem; font-weight:bold">順天堂大学 本郷・お茶の水キャンパス<br>2026年3月27日(金)</p>
+        
+        <p class="redsection" style="margin-top: 50px;">【審査員】</p>
+	<div style="background: #fff2f2; padding: 12px 0 15px">
+        <div class="grid">
+            <div class="card">
+                <div class="circle-img">Photo</div>
+                <div class="role">デジタルハリウッド大学卓越教授<br>ハコスコ取締役CTO</div>
+                <div class="name">藤井 直敬 先生</div>
+            </div>
+            <div class="card">
+                <div class="circle-img">Photo</div>
+                <div class="role">順天堂大学医学部 主任教授</div>
+                <div class="name">波多野 琢 先生</div>
+            </div>
+            <div class="card">
+                <div class="circle-img">Photo</div>
+                <div class="role">玉川大学脳科学研究所 教授</div>
+                <div class="name">奥村 哲 先生</div>
+            </div>
+            <div class="card">
+                <div class="circle-img">Photo</div>
+                <div class="role">順天堂大学医学部 准教授</div>
+                <div class="name">長田 貴宏 先生</div>
+            </div>
+	</div>
+        </div>
+    </div>
+
+
+    <div style="background-color: rgba(11, 83, 148, 0.9)">
+    <div class="section-banner banner-blue">
+        <span class="jp-title">基調講演</span>
+        <span class="en-title">Keynote Speech</span>
+    </div>
+
+    <div class="content-block">
+        <div class="keynote-wrapper">
+	    <div class="bracket-side">
+                <div class="large-bracket-box">
+                   <span class="text-white"> <span class="text-yellow">パーキンソン病</span>の原因究明に挑む</span> 
+                </div>
+            </div>
+
+        <div class="speaker-profile-group">
+            <div class="circle-img-keynote">
+                Photo
+            </div>
+            <div class="speaker-text-details">
+            <h2 class="name-large text-white">服部 信孝 先生</h2>
+                    <ul class="credentials-list">
+                        <li>・順天堂大学 学長補佐 </li>
+                        <li>・順天堂大学大学院医学研究科 </li>
+                        <li>・ニューロングリアクロストークセンターセンター長</li>
+                        <li>・順天堂大学医学部神経学講座 特任教授　他</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <div class="section-banner banner-red">
+        <span class="jp-title">お問い合わせ</span>
+        <span class="en-title">Contact</span>
+    </div>
+    <div class="content-block">
+        <p>スポンサーのご連絡やお問い合わせは、以下のメールアドレスまでお願いいたします。</p>
+        <p style="font-size: 1.2rem; font-weight: bold; color: #0998C8; text-align: center">iynajapan2024@gmail.com</p>
+    </div>
+    </div>
+
+</div>
+
+</body>
+</html>
